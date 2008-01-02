@@ -16,6 +16,7 @@ Patch0:		wxsvg-freetype-fix.patch
 URL:		http://wxsvg.sourceforge.net/
 License:	LGPL
 Group:		System/Libraries
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	wxGTK2.6-devel libart_lgpl-devel
 
 %description
