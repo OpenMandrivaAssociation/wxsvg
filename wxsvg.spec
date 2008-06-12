@@ -1,6 +1,6 @@
 %define version	1.0
 %define beta	10
-%define release %mkrel 0.beta%{beta}.1
+%define release %mkrel 0.beta%{beta}.2
 
 %define major		0
 %define libname		%mklibname %name %major
@@ -60,6 +60,11 @@ ln -s %{_datadir}/libtool/ltmain.sh .
 rm -rf %{buildroot}
 %makeinstall_std
 
+# these don't actually work - see http://sourceforge.net/forum/forum.php?thread_id=2069902&forum_id=424987
+# - AdamW 2008/06
+rm -f %{_bindir}/svgui
+rm -f %{_bindir}/calculette
+
 %clean
 rm -rf %{buildroot}
 
@@ -74,8 +79,6 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc AUTHORS ChangeLog COPYING TODO
 %{_bindir}/svgview
-%{_bindir}/svgui
-%{_bindir}/calculette
 
 %files -n %{libname}
 %defattr(-,root,root)
