@@ -62,8 +62,8 @@ rm -rf %{buildroot}
 
 # these don't actually work - see http://sourceforge.net/forum/forum.php?thread_id=2069902&forum_id=424987
 # - AdamW 2008/06
-rm -f %{_bindir}/svgui
-rm -f %{_bindir}/calculette
+rm -f %{buildroot}%{_bindir}/svgui
+rm -f %{buildroot}%{_bindir}/calculette
 
 %clean
 rm -rf %{buildroot}
