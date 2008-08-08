@@ -1,6 +1,6 @@
 %define version	1.0
 %define beta	10
-%define release %mkrel 0.beta%{beta}.2
+%define release %mkrel 3.beta%{beta}.2
 
 %define major		0
 %define libname		%mklibname %name %major
