@@ -1,18 +1,18 @@
-%define version	1.0
-%define beta	10
-%define release %mkrel 3.beta%{beta}.2
+%define oname	wxSVG
+
+%define rel	1
+%define beta	11
 
 %define major		0
-%define libname		%mklibname %name %major
-%define develname	%mklibname %name -d
+%define libname		%mklibname %{name} %{major}
+%define develname	%mklibname %{name} -d
 
 Name: 	 	wxsvg
 Summary: 	A library to create, manipulate and render SVG files
 Version: 	1.0
-Release: 	%{release}
-Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}b%{beta}.tar.gz
-#Patch0:		wxsvg-freetype-fix.patch
-Patch0:		wxsvg-1.0b10-headercheck.patch
+Release: 	%mkrel 0.beta%{beta}.%{rel}
+Source0:	http://downloads.sourceforge.net/%{name}/%{oname}-%{version}b%{beta}.tar.bz2
+Patch0:		wxsvg-1.0b11-includes.patch
 URL:		http://wxsvg.sourceforge.net/
 License:	wxWidgets
 Group:		System/Libraries
@@ -22,7 +22,7 @@ BuildRequires:	libart_lgpl-devel
 BuildRequires:	ffmpeg-devel
 
 %description
-wxSVG is C++ library to create, manipulate and render SVG files.
+wxSVG is a C++ library to create, manipulate and render SVG files.
 
 %package -n 	%{libname}
 Summary:        Dynamic libraries from %{name}
@@ -35,7 +35,6 @@ Dynamic libraries from %{name}.
 Summary: 	Header files and static libraries from %{name}
 Group: 		Development/C
 Requires: 	%{libname} >= %{version}
-Provides: 	lib%{name}-devel = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 Obsoletes:	%{mklibname wxsvg 0 -d}
 Obsoletes: 	%{name}-devel
@@ -44,15 +43,14 @@ Obsoletes: 	%{name}-devel
 Libraries and includes files for developing programs based on %{name}.
 
 %prep
-%setup -q -n %{name}-%{version}b%{beta}
-#%patch0
-%patch0 -p1 -b .headercheck
+%setup -q -n %{oname}-%{version}b%{beta}
+%patch0 -p1 -b .includes
 
 %build
 # automake doesn't work without ltmain.sh... - AdamW 2008/06
 ln -s %{_datadir}/libtool/ltmain.sh .
-
 ./autogen.sh
+
 %configure2_5x --with-wx-config=%{_bindir}/wx-config-ansi 
 %make
 										
@@ -88,7 +86,5 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %{_includedir}/*
 %{_libdir}/*.so
-%{_libdir}/*.a
-%{_libdir}/*.la
-
+%{_libdir}/*.*a
 
