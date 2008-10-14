@@ -1,6 +1,6 @@
 %define oname	wxSVG
 
-%define rel	1
+%define rel	2
 %define beta	11
 
 %define major		0
