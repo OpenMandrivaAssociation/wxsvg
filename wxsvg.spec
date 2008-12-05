@@ -1,7 +1,4 @@
-%define oname	wxSVG
-
-%define rel	2
-%define beta	11
+%define rel	1
 
 %define major		0
 %define libname		%mklibname %{name} %{major}
@@ -10,14 +7,13 @@
 Name: 	 	wxsvg
 Summary: 	A library to create, manipulate and render SVG files
 Version: 	1.0
-Release: 	%mkrel 0.beta%{beta}.%{rel}
-Source0:	http://downloads.sourceforge.net/%{name}/%{oname}-%{version}b%{beta}.tar.bz2
-Patch0:		wxsvg-1.0b11-includes.patch
+Release: 	%mkrel 1
+Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 URL:		http://wxsvg.sourceforge.net/
 License:	wxWidgets
 Group:		System/Libraries
 BuildRoot:	%{_tmppath}/%{name}-buildroot
-BuildRequires:	wxGTK2.6-devel
+BuildRequires:	wxGTK2.8-devel >= 2.8.7
 BuildRequires:	libart_lgpl-devel
 BuildRequires:	ffmpeg-devel
 
@@ -43,8 +39,7 @@ Obsoletes: 	%{name}-devel
 Libraries and includes files for developing programs based on %{name}.
 
 %prep
-%setup -q -n %{oname}-%{version}b%{beta}
-%patch0 -p1 -b .includes
+%setup -q -n %{name}-%{version}
 
 %build
 # automake doesn't work without ltmain.sh... - AdamW 2008/06
