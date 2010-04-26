@@ -1,12 +1,10 @@
-%define rel	2
-
 %define major		0
 %define libname		%mklibname %{name} %{major}
 %define develname	%mklibname %{name} -d
 
 Name: 	 	wxsvg
 Summary: 	A library to create, manipulate and render SVG files
-Version: 	1.0
+Version: 	1.0.3
 Release: 	%mkrel 1
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 URL:		http://wxsvg.sourceforge.net/
@@ -43,8 +41,8 @@ Libraries and includes files for developing programs based on %{name}.
 
 %build
 # automake doesn't work without ltmain.sh... - AdamW 2008/06
-ln -s %{_datadir}/libtool/ltmain.sh .
-./autogen.sh
+#ln -s %{_datadir}/libtool/ltmain.sh .
+#./autogen.sh
 
 %configure2_5x --with-wx-config=%{_bindir}/wx-config-ansi 
 %make
