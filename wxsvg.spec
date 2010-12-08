@@ -5,7 +5,7 @@
 Name: 	 	wxsvg
 Summary: 	A library to create, manipulate and render SVG files
 Version: 	1.0.3
-Release: 	%mkrel 1
+Release: 	%mkrel 2
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
 URL:		http://wxsvg.sourceforge.net/
 License:	wxWidgets
