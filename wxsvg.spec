@@ -55,6 +55,7 @@ autoreconf -vfi
 
 %install
 %makeinstall_std
+rm -rf %buildroot/%{_libdir}/*.la
 
 %files
 %doc AUTHORS ChangeLog COPYING TODO
