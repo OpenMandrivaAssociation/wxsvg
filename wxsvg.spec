@@ -1,14 +1,12 @@
-%define		major		0
+%define		major		3
 %define		libname		%mklibname %{name} %{major}
 %define		develname	%mklibname %{name} -d
 
 Name:		wxsvg
 Summary:	A library to create, manipulate and render SVG files
-Version:	1.1.9
-Release:	2
+Version:	1.5.4
+Release:	1
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.bz2
-Patch0:		wxsvg-1.1.5-Makefile.am.patch
-Patch1:		wxsvg-1.1.8-linkage.patch
 URL:		http://wxsvg.sourceforge.net/
 License:	wxWidgets
 Group:		System/Libraries
@@ -39,14 +37,9 @@ Libraries and includes files for developing programs based on %{name}.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
+%apply_patches
 
 %build
-#move files to a better place
-mkdir m4
-mv *.m4 m4/
-autoreconf -vfi
 %configure2_5x \
 	--disable-static \
 	--with-wx-config=%{_bindir}/wx-config-unicode \
