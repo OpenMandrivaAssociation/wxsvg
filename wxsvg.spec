@@ -37,7 +37,7 @@ Libraries and includes files for developing programs based on %{name}.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 %configure2_5x \
