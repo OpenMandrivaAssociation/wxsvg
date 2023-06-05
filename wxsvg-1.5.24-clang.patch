@@ -1,0 +1,10 @@
+--- a/src/cairo/SVGCanvasCairo.h
++++ b/src/cairo/SVGCanvasCairo.h
+@@ -13,6 +13,7 @@
+ 
+ #include "SVGCanvas.h"
+ #include <cairo/cairo.h>
++#include <cstdint>
+ 
+ class wxSVGCanvasPathCairo;
+ class wxSVGCanvasTextCairo;
