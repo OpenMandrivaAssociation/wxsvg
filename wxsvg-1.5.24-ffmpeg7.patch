@@ -1,0 +1,11 @@
+--- wxsvg-1.5.24/src/mediadec_ffmpeg.cpp.orig	2024-04-10 22:49:03.563944931 +0100
++++ wxsvg-1.5.24/src/mediadec_ffmpeg.cpp	2024-04-10 22:49:12.871615119 +0100
+@@ -165,7 +165,7 @@
+ }
+ 
+ int wxFfmpegMediaDecoder::GetChannelNumber(unsigned int streamIndex) {
+-	return m_formatCtx ? m_formatCtx->streams[streamIndex]->codecpar->channels : -1;
++	return m_formatCtx ? m_formatCtx->streams[streamIndex]->codecpar->ch_layout.nb_channels : -1;
+ }
+ 
+ int wxFfmpegMediaDecoder::GetSampleRate(unsigned int streamIndex) {
