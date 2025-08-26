@@ -6,7 +6,7 @@
 Summary:	A library to create, manipulate and render SVG files
 Name:		wxsvg
 Version:	1.5.24
-Release:	3
+Release:	4
 License:	wxWidgets
 Group:		System/Libraries
 Url:		https://wxsvg.sourceforge.net/
