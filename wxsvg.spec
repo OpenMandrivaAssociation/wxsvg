@@ -13,6 +13,11 @@ Url:		https://wxsvg.sourceforge.net/
 Source0:	https://downloads.sourceforge.net/project/wxsvg/wxsvg/%{version}/wxsvg-%{version}.tar.bz2
 Patch0:		wxsvg-1.5.24-clang.patch
 Patch1:		wxsvg-1.5.24-ffmpeg7.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	ffmpeg-devel
 BuildRequires:	wxgtku3.2-devel
 BuildRequires:	pkgconfig(cairo)
