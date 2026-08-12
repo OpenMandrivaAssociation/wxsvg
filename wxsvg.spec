@@ -6,12 +6,11 @@
 Summary:	A library to create, manipulate and render SVG files
 Name:		wxsvg
 Version:	1.5.25
-Release:	4
+Release:	5
 License:	wxWidgets
 Group:		System/Libraries
 Url:		https://wxsvg.sourceforge.net/
 Source0:	https://downloads.sourceforge.net/project/wxsvg/wxsvg/%{version}/wxsvg-%{version}.tar.bz2
-Source100:	%{name}.rpmlintrc
 # dropped (no longer applies): Patch0:		wxsvg-1.5.25-clang.patch
 # dropped (no longer applies): Patch1:		wxsvg-1.5.25-ffmpeg7.patch
 BuildRequires:	autoconf
