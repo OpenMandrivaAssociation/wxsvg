@@ -1,0 +1,4 @@
+addFilter(r"E: lib-package-without-%mklibname")
+addFilter(r"E: hardcoded-library-path")
+addFilter(r"E: unused-rpmlintrc-filter")
+addFilter(r"W: invalid-license")
