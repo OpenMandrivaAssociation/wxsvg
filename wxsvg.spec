@@ -84,7 +84,3 @@ Libraries and includes files for developing programs based on %{name}.
 
 %install
 %make_install
-
-
-# keep %mklibname visible for rpmlint SpecCheck (checks last line only)
-# %mklibname
